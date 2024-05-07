@@ -6,6 +6,19 @@ import { v4 as uuidv4 } from "uuid";
 
 const app = express();
 
+// multer middleware
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./uploads");
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + "-" + uuidv4() + path.extname(file.originalname));
+  },
+});
+
+// multer configuration
+const upload = multer({ storage: storage });
+
 // cors middleware
 app.use(
   cors({
