@@ -1,1 +1,3 @@
 -install ffmpeg in your system
+-https://www.cloudflare.com/learning/video/what-is-http-live-streaming/
+-https://chaicode.com/blogs/full-stack-video-streaming-platform
