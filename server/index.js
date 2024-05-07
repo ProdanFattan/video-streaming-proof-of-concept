@@ -40,6 +40,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", express.static("uploads"));
 
+// upload route handler
+app.post("/upload", upload.single("file"), function (req, res) {
+  console.log(req.file);
+  res.send("File uploaded successfully");
+});
+
 app.get("/", function (req, res) {
   res.json({ message: "Hello World..." });
 });
